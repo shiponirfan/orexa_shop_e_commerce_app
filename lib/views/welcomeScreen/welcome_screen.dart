@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:orexa_shop/views/auth/login/login.dart';
+import 'package:orexa_shop/views/auth/register/register.dart';
 import 'package:orexa_shop/widgets/custom_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -18,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'Discover Your\nDream Job here',
+                    'Discover Your\nBest Product here',
                     style: Theme.of(context).textTheme.titleLarge,
                     textAlign: TextAlign.center,
                   ),
@@ -26,24 +29,26 @@ class WelcomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    'Explore all the existing job roles based on your\ninterest and study major',
+                    'Explore all the existing products\nbased on your interest',
                     style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
-              const Row(
+              Row(
                 children: [
                   Expanded(
                       child: CustomButton(
                     title: 'Login',
+                    onTap: () => Get.to(() => const LoginScreen()),
                   )),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Expanded(
                       child: CustomButton(
                     title: 'Register',
+                    onTap: () => Get.to(() => const RegisterScreen()),
                     bgColor: Colors.transparent,
                     textColor: Colors.black,
                   )),

@@ -5,6 +5,7 @@ class CustomButton extends StatelessWidget {
   final String title;
   final Color? bgColor;
   final Color? textColor;
+  final double? fontSize;
   final void Function()? onTap;
 
   const CustomButton(
@@ -12,7 +13,8 @@ class CustomButton extends StatelessWidget {
       required this.title,
       this.bgColor,
       this.onTap,
-      this.textColor});
+      this.textColor,
+      this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class CustomButton extends StatelessWidget {
             title,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                   color: textColor ?? Colors.white,
+                  fontSize: fontSize ?? 20,
                 ),
             textAlign: TextAlign.center,
           )),

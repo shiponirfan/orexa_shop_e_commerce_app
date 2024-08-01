@@ -17,32 +17,35 @@ class MyApp extends StatelessWidget {
       title: 'Orexa Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
-          useMaterial3: true,
-          textTheme:
-              GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme.copyWith(
-                    titleMedium: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.primaryColor,
-                    ),
-                    titleLarge: const TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primaryColor,
-                    ),
-                    titleSmall: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    bodyLarge: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w500),
-                    bodyMedium: const TextStyle(
-                        fontSize: 14, fontWeight: FontWeight.w500),
-                    bodySmall: const TextStyle(
-                      fontSize: 14,
-                    ),
-                  ))),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+        useMaterial3: true,
+        textTheme:
+            GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme.copyWith(
+                  titleMedium: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.primaryColor,
+                  ),
+                  titleLarge: const TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.primaryColor,
+                  ),
+                  titleSmall: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  bodyLarge: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w500),
+                  bodyMedium: const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.w500),
+                  bodySmall: const TextStyle(
+                    fontSize: 14,
+                  ),
+                )),
+      ),
       home: const SplashScreen(),
     );
   }
