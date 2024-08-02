@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:orexa_shop/views/homeScreen/home_screen.dart';
 
 import '../../../utils/app_colors.dart';
 import '../../../widgets/custom_appbar.dart';
@@ -64,30 +65,32 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Column(
+                Column(
                   children: [
-                    CustomTextField(hintText: 'Email'),
-                    SizedBox(
+                    const CustomTextField(hintText: 'Email'),
+                    const SizedBox(
                       height: 20,
                     ),
-                    CustomTextField(
+                    const CustomTextField(
                       hintText: 'Password',
                       secureText: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    CustomTextField(
+                    const CustomTextField(
                       hintText: 'Confirm Password',
                       secureText: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Row(
                       children: [
                         Expanded(
-                          child: CustomButton(title: 'Complete Setup'),
+                          child: CustomButton(title: 'Complete Setup',
+                          onTap: ()=> Get.to(()=>const HomeScreen()),
+                          ),
                         )
                       ],
                     ),

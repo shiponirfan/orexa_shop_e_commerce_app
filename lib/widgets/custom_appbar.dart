@@ -5,25 +5,48 @@ import 'package:get/get.dart';
 import '../utils/app_colors.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppbar({super.key});
+  final void Function()? searchOnTap;
+  final bool? search;
+  final bool? menu;
+  final void Function()? menuOpen;
+
+  const CustomAppbar(
+      {super.key, this.searchOnTap, this.search, this.menu, this.menuOpen});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leadingWidth: 50,
+      leadingWidth: 60,
       forceMaterialTransparency: true,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(left: 20),
         child: InkWell(
-          onTap: Get.back,
+          onTap: menuOpen ?? Get.back,
           child: Container(
               decoration: const BoxDecoration(
                   color: AppColors.backgroundColor, shape: BoxShape.circle),
-              child: const Icon(
-                Icons.keyboard_backspace_outlined,
+              child: Icon(
+                menu == true ? Icons.menu : Icons.keyboard_backspace_outlined,
               )),
         ),
       ),
+      actions: [
+        if (search == true)
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: InkWell(
+              onTap: searchOnTap,
+              child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: const BoxDecoration(
+                      color: AppColors.backgroundColor, shape: BoxShape.circle),
+                  child: const Icon(
+                    Icons.search,
+                  )),
+            ),
+          ),
+      ],
     );
   }
 
